@@ -22,7 +22,9 @@ def get_text():
 
 
 def convert_to_audio():
+   
    file_path = filedialog.asksaveasfilename(title='Save Audio', defaultextension=".mp3", filetypes=[("MP3 files", "*.mp3")])
+   file_name.config(text='Converting....')
    text=text_to_convert.get()
    if text!='' and file_path:
        text_to_audio(text, file_path)
@@ -30,7 +32,7 @@ def convert_to_audio():
        file_name.config(text='Please choose a valid pdf file')
        return None
    
-   
+
 # -----------------------------UI-SETUP-------------------------------
 window = Tk()
 window.title("PDF To Audio Book")
